@@ -1,0 +1,23 @@
+<script type="text/ng-template" id="angular-template-concept">
+    <main ng-init="$parent.$parent.$parent.$parent.hideToolbar = false" class="body-start">
+        <div ng-controller="dataServeController" ng-init="init('interests');" class="interests-search">
+            <div>
+                <input type="text" placeholder="Buscar..." />
+                <span>
+                    <ons-button modifier="quiet" ng-click="get()" class="btn-itic btn-itic-small">
+                        <a class="">Buscar</a>
+                    </ons-button>
+                </span>
+            </div>
+
+            <div class="itic-grid">
+                <div class="grid-list" ng-repeat="interest in results._embedded.interests">
+                    <div back-img="[[interest.img]]" class="grid-cell cover-background-image">
+                        <div class="curtain curtain-top">[[interest.text]]</div>
+                        <ons-button class="itic-face-ball" ng-click="feedback.showMessage('¡Has añadido ese interés!')"><span>+</span></ons-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</script>
